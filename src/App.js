@@ -1,15 +1,17 @@
-
+import { CandidateList } from './components/CandidateList';
+import { CandidateProvider } from './context/CandidateState';
 
 const App = () => {
   return (
-    <div className="">
-        <h1 className="">
-        Hello world!
-      </h1>      
-    </div>
+    <CandidateProvider>
+      <div className="App">
+        <CandidateList />
+      </div>
+    </CandidateProvider>
   );
 }
 
 export default App;
+
 
 
