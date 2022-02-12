@@ -1,12 +1,20 @@
-import { CandidateList } from './components/CandidateList';
-import { CandidateProvider } from './context/CandidateState';
+import {CandidateProvider} from './context/CandidateState';
+import { Home } from './views/Home.js';
+import { AddCandidate } from './components/AddCandidate.js';
+import {BrowserRouter, Routes, Route } from 'react-router-dom';
+
 
 const App = () => {
   return (
     <CandidateProvider>
-      <div className="App">
-        <CandidateList />
-      </div>
+      <div>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/add" element={<AddCandidate />} />
+          </Routes>
+        </BrowserRouter>
+      </div>      
     </CandidateProvider>
   );
 }
