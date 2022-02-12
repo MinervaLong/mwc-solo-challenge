@@ -6,9 +6,12 @@ const initialState = {
   candidates: [
     {
       id: 1,
+      avatar: '',
       name: "Sammy",
-      location: "DigitalOcean",
-      designation: "Shark"
+      mail: 'sammy@mail.com',
+      description: 'Some brief text about who is Sammy but it should have at least 140 characters, like an old tweet for example',
+      country: 'United Kingdom',
+      city: "Oxford",
     }
   ]
 };
@@ -25,13 +28,6 @@ export const CandidateProvider = ({ children }) => {
     });
   }
 
-  const editCandidate = (candidate) => {
-    dispatch({
-      type: "EDIT_CANDIDATE",
-      payload: candidate
-    });
-  }
-
   const removeCandidate = (id) => {
     dispatch({
       type: "REMOVE_CANDIDATE",
@@ -44,7 +40,6 @@ export const CandidateProvider = ({ children }) => {
       value={{
         candidates: state.candidates,
         addCandidate,
-        editCandidate,
         removeCandidate
       }}
     >
